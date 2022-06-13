@@ -1,16 +1,11 @@
-
-import ClassComponentCounter from "./ClassComponentCounter";
-import { Counter } from "./Counter";
-
+import RecipeList from "./components/RecipeList";
+import {sampleRecipes} from './data'
 function App() {
   return (
-    <>
-        <ClassComponentCounter initialCount = {0}/>
-
-     -------------------
-
-        <Counter initialCount = {3}/>
-        </>
+   <>
+    <RecipeList recipes = {sampleRecipes}/>
+    
+   </>
   );
 }
 
