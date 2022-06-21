@@ -36,6 +36,11 @@ export const sampleRecipes =[
                 name: 'Salt',
                 amount: '1Tbls' 
             },
+            {
+                id: 3,
+                name: 'Pepper',
+                amount: '1Tbls' 
+            },
 
         ]
     }

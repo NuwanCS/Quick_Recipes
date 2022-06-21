@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { RecipeContext } from '../App'
 import IngredientList from './IngredientList'
 
+
 const Container = styled.div`
-    
+    position: relative;
 `
 
 const TopContainer = styled.div`
@@ -63,12 +65,19 @@ const IngredientsContainer = styled.div`
 `
 const Recipe = (props) => {
     const {
+        id,
         name,
         cookTIme,
         servings,
         instructions,
-        ingredients
+        ingredients,
+        
     } = props
+
+    const {
+        handleRecipeDelete, 
+        handleRecipieEditID} = useContext(RecipeContext);
+
 
   return (
     <Container>
@@ -77,8 +86,8 @@ const Recipe = (props) => {
                 {name}
             </TitleContainer>
             <ButtonConatiner>
-                <EditButton>Edit</EditButton>
-                <DeleteButton>Delete</DeleteButton>
+                <EditButton onClick={()=> handleRecipieEditID(id) }>Edit</EditButton>
+                <DeleteButton onClick={()=>handleRecipeDelete(id)}>Delete</DeleteButton>
             </ButtonConatiner>
         </TopContainer>
         <CookTimeContianer>

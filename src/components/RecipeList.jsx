@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Recipe from './Recipe'
+import styled from  'styled-components'
+import { RecipeContext } from '../App'
 
-const RecipeList = ({recipes}) => {
+const AddNewButton = styled.button`
+    
+`
+const RecipeList = ({recipes, handleRecipeDelete}) => {
+
+    const {handleRecipeAdd} = useContext(RecipeContext)
   return (
+      <>
       <div>
         {recipes?.map(recipe=>(
             <Recipe 
@@ -10,6 +18,9 @@ const RecipeList = ({recipes}) => {
                 {...recipe}
             />))}
       </div>
+      <AddNewButton onClick={handleRecipeAdd}>Add New Recipe</AddNewButton>
+      </>
+      
      
     
   )
